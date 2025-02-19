@@ -1,0 +1,248 @@
+@font-face {
+  font-family: Camera;
+  src: url(/Assets/ABCCameraEdu-Medium.woff2) format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: MonaspaceKrypton;
+  src: url(/Assets/MonaspaceKrypton-MediumItalic.otf) format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --color-pink: #ff3ea1;
+  --color-green: #57bf69;
+  --color-cyan: #68dfda;
+  --color-yellow: #f2cc46;
+}
+
+body {
+  background-color: var(--color-pink);
+  color: #000000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+.MainTitle,
+.font-camera {
+  font-family: Camera, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-size: clamp(3rem, 12vmax, 12rem);
+  text-align: center;
+  letter-spacing: -0.03em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 0.875;
+  hyphens: auto;
+}
+
+marquee {
+  background-color: var(--color-yellow);
+  animation: rainbow 5s infinite linear;
+  padding-block: 0.375rem;
+}
+
+@keyframes rainbow {
+  0% {
+    background-color: var(--color-yellow);
+  }
+  25% {
+    background-color: var(--color-green);
+  }
+  50% {
+    background-color: var(--color-cyan);
+  }
+  75% {
+    background-color: var(--color-pink);
+  }
+  100% {
+    background-color: var(--color-yellow);
+  }
+}
+
+h2,
+h3,
+marquee,
+.font-mona {
+  font-family: MonaspaceKrypton, "Courier New", Courier, monospace;
+}
+.NormalText,
+h2,
+h3 {
+  text-wrap: balance;
+  max-width: min(90%, 48rem);
+  margin-inline: auto;
+  text-align: center;
+  line-height: 1.5;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.MainTitle {
+  /* font-size: clamp(3rem, 10vmax, 12rem); */
+  /* font-weight: 700; */
+  text-transform: uppercase;
+  position: relative;
+}
+
+@media (max-width: 32em) {
+  .MainTitle {
+    font-size: 3.75rem;
+  }
+}
+
+.MainTitle:hover {
+  text-shadow: 0.05em 0 0 var(--color-green), -0.025em -0.05em 0 var(--color-cyan),
+    0.025em 0.05em 0 var(--color-yellow);
+
+  animation: MainTitle 750ms infinite;
+}
+
+.MainTitle span:first-child {
+  /* animation: MainTitle 650ms infinite; */
+  /* transform: translate(-0.025em, -0.0125em); */
+  /* color: green; */
+  /* opacity: 0.8; */
+}
+
+.MainTitle span:last-child {
+  -webkit-text-fill-color: transparent;
+  z-index: -1;
+  /* animation: MainTitle 375ms infinite; */
+  /* clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%); */
+  transform: translate(0.0125em, 0.025em);
+  opacity: 0.8;
+  position: absolute;
+  inset: 0;
+}
+
+/* https://web.dev/prefers-reduced-motion/#(bonus)-forcing-reduced-motion-on-all-websites */
+
+@keyframes MainTitle {
+  0% {
+    text-shadow: 0.05em 0 0 var(--color-green), -0.05em -0.025em 0 var(--color-cyan),
+      -0.025em 0.05em 0 var(--color-yellow);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 var(--color-green), -0.05em -0.025em 0 var(--color-cyan),
+      -0.025em 0.05em 0 var(--color-yellow);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 var(--color-green), 0.025em 0.025em 0 var(--color-cyan),
+      -0.05em -0.05em 0 var(--color-yellow);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 var(--color-green), 0.025em 0.025em 0 var(--color-cyan),
+      -0.05em -0.05em 0 var(--color-yellow);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 var(--color-green), 0.05em 0 0 var(--color-cyan),
+      0 -0.05em 0 var(--color-yellow);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 var(--color-green), 0.05em 0 0 var(--color-cyan),
+      0 -0.05em 0 var(--color-yellow);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 var(--color-green), -0.025em -0.025em 0 var(--color-cyan),
+      -0.025em -0.05em 0 var(--color-yellow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Styling for Image Buttons */
+a img {
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Individual Button Classes (Optional if needed for further styling) */
+.WorkshopButton:hover {
+  transform: scale(1.1);
+}
+
+.ScheduleButton:hover {
+  transform: scale(1.1);
+}
+
+.CodeOfConductButton:hover {
+  transform: scale(1.1);
+}
+
+.DocumentationButton:hover {
+  transform: scale(1.1);
+}
+
+.alligator {
+  aspect-ratio: 693 / 643;
+  background-image: url(/Assets/WebAni1.webp);
+  background-size: contain;
+  animation: alligator 4s infinite linear forwards;
+  width: min(100%, 643px);
+  margin-top: 4rem;
+  margin-bottom: -1rem;
+  margin-inline: auto;
+}
+
+.alligator:hover {
+  animation-duration: 2s;
+}
+
+@keyframes alligator {
+  0% {
+    background-image: url(/Assets/WebAni1.webp);
+  }
+  24.99% {
+    background-image: url(/Assets/WebAni1.webp);
+  }
+  25% {
+    background-image: url(/Assets/WebAni3.webp);
+  }
+  49.99% {
+    background-image: url(/Assets/WebAni3.webp);
+  }
+  50% {
+    background-image: url(/Assets/WebAni2.webp);
+  }
+  74.99% {
+    background-image: url(/Assets/WebAni2.webp);
+  }
+  75% {
+    background-image: url(/Assets/WebAni4.webp);
+  }
+  99.99% {
+    background-image: url(/Assets/WebAni4.webp);
+  }
+}
