@@ -22,8 +22,6 @@
 body {
   background-color: var(--color-pink);
   color: #000000;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -31,8 +29,19 @@ body {
 h1,
 .MainTitle,
 .font-camera {
-  font-family: Camera, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    Camera,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 h1 {
@@ -69,6 +78,7 @@ marquee {
   }
 }
 
+body,
 h2,
 h3,
 marquee,
@@ -76,13 +86,23 @@ marquee,
   font-family: MonaspaceKrypton, "Courier New", Courier, monospace;
 }
 .NormalText,
-h2,
-h3 {
+h2 {
   text-wrap: balance;
   max-width: min(90%, 48rem);
   margin-inline: auto;
   text-align: center;
   line-height: 1.5;
+}
+
+.container,
+.workshopDescription {
+  max-width: min(90%, 48rem);
+  margin-inline: auto;
+}
+.workshopDescription h3 {
+  font-size: 1.75rem;
+  margin: 0;
+  text-wrap: pretty;
 }
 
 section {
@@ -91,6 +111,10 @@ section {
   align-content: center;
   min-height: 100vh;
   padding: 1rem;
+}
+
+h1.Title {
+  margin-top: 4rem;
 }
 
 .MainTitle {
@@ -107,7 +131,9 @@ section {
 }
 
 .MainTitle:hover {
-  text-shadow: 0.05em 0 0 var(--color-green), -0.025em -0.05em 0 var(--color-cyan),
+  text-shadow:
+    0.05em 0 0 var(--color-green),
+    -0.025em -0.05em 0 var(--color-cyan),
     0.025em 0.05em 0 var(--color-yellow);
 
   animation: MainTitle 750ms infinite;
@@ -135,31 +161,45 @@ section {
 
 @keyframes MainTitle {
   0% {
-    text-shadow: 0.05em 0 0 var(--color-green), -0.05em -0.025em 0 var(--color-cyan),
+    text-shadow:
+      0.05em 0 0 var(--color-green),
+      -0.05em -0.025em 0 var(--color-cyan),
       -0.025em 0.05em 0 var(--color-yellow);
   }
   14% {
-    text-shadow: 0.05em 0 0 var(--color-green), -0.05em -0.025em 0 var(--color-cyan),
+    text-shadow:
+      0.05em 0 0 var(--color-green),
+      -0.05em -0.025em 0 var(--color-cyan),
       -0.025em 0.05em 0 var(--color-yellow);
   }
   15% {
-    text-shadow: -0.05em -0.025em 0 var(--color-green), 0.025em 0.025em 0 var(--color-cyan),
+    text-shadow:
+      -0.05em -0.025em 0 var(--color-green),
+      0.025em 0.025em 0 var(--color-cyan),
       -0.05em -0.05em 0 var(--color-yellow);
   }
   49% {
-    text-shadow: -0.05em -0.025em 0 var(--color-green), 0.025em 0.025em 0 var(--color-cyan),
+    text-shadow:
+      -0.05em -0.025em 0 var(--color-green),
+      0.025em 0.025em 0 var(--color-cyan),
       -0.05em -0.05em 0 var(--color-yellow);
   }
   50% {
-    text-shadow: 0.025em 0.05em 0 var(--color-green), 0.05em 0 0 var(--color-cyan),
+    text-shadow:
+      0.025em 0.05em 0 var(--color-green),
+      0.05em 0 0 var(--color-cyan),
       0 -0.05em 0 var(--color-yellow);
   }
   99% {
-    text-shadow: 0.025em 0.05em 0 var(--color-green), 0.05em 0 0 var(--color-cyan),
+    text-shadow:
+      0.025em 0.05em 0 var(--color-green),
+      0.05em 0 0 var(--color-cyan),
       0 -0.05em 0 var(--color-yellow);
   }
   100% {
-    text-shadow: -0.025em 0 0 var(--color-green), -0.025em -0.025em 0 var(--color-cyan),
+    text-shadow:
+      -0.025em 0 0 var(--color-green),
+      -0.025em -0.025em 0 var(--color-cyan),
       -0.025em -0.05em 0 var(--color-yellow);
   }
 }
@@ -185,7 +225,9 @@ a {
 
 /* Styling for Image Buttons */
 a img {
-  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transition:
+    box-shadow 0.3s ease-in-out,
+    transform 0.2s ease-in-out;
 }
 
 /* Individual Button Classes (Optional if needed for further styling) */
@@ -245,4 +287,20 @@ a img {
   99.99% {
     background-image: url(/Assets/WebAni4.webp);
   }
+}
+
+dl {
+  display: grid;
+  margin: 0;
+  grid-template-columns: 8ch 1fr;
+  gap: 0.5rem;
+}
+dt {
+  text-align: right;
+}
+
+a {
+  color: var(--color-cyan);
+  text-decoration: underline wavy;
+  text-underline-position: under;
 }
