@@ -22,55 +22,132 @@
       <h1 class="Title">Work<wbr />shops</h1>
 
       <div class="workshopDescription">
-        <h3 class="font-camera">Can I get a Box? - Josh Zhong</h3>
-        <p>
-          Did you know there are free online 3D modelling tools you can use to
-          create simple enclosures for your stupid projects? <br />
-          Bring your laptop and a friend with 3D printing access to learn more!
-        </p>
+        <h2 class="font-camera">12:00pm</h2>
+        <img
+          src="/Assets/JoshW.png"
+          alt="Josh Zhong"
+          width="439"
+          height="568"
+        />
+        <div>
+          <h3 class="font-camera">Can I get a Box? - Josh Zhong</h3>
+          <p>
+            Did you know there are free online 3D modelling tools you can use to
+            create simple enclosures for your stupid projects? <br />
+            Bring your laptop and a friend with 3D printing access to learn
+            more!
+          </p>
+          <p>Classroom 412</p>
+        </div>
 
-        <br />
-        <br />
+        <img
+          src="/Assets/AlannaW.png"
+          alt="Alanna Okun"
+          width="439"
+          height="568"
+        />
+        <div>
+          <h3 class="font-camera">Make a Little Game - Alanna Okun</h3>
+          <p>
+            We'll be talking about a couple of tools for making lightweight,
+            flexible digital games / gamelike experiences quickly, like Twine,
+            Bitsy, and Google Sheets (for real!).<br />
+            No coding experience necessary.
+          </p>
+          <p>Classroom 413</p>
+        </div>
 
-        <h3 class="font-camera">
-          DIY Cybertruck Sonny Angel - Ryan Rotella and Fabrizio Guccione
-        </h3>
-        <p>
-          Ever been lonely at your laptop? Well, no more! Come make your own
-          light-up 3D printed Cybertruck Sonny Angel. <br />
-          It's just a little guy with an LED and a dream.
-        </p>
+        <h2 class="font-camera">1:30pm</h2>
 
-        <br />
-        <br />
+        <img
+          src="/Assets/RyanW.png"
+          alt="Alanna Okun"
+          width="439"
+          height="568"
+        />
+        <div>
+          <h3 class="font-camera">
+            DIY Cybertruck Sonny Angel - Ryan Rotella &amp; Fabrizio Guccione
+          </h3>
+          <p>
+            Ever been lonely at your laptop? Well, no more! Come make your own
+            light-up 3D printed Cybertruck Sonny Angel. <br />
+            It's just a little guy with an LED and a dream.
+          </p>
+          <p>Classroom 412</p>
+        </div>
 
-        <h3 class="font-camera">Make a Little Game - Alanna Okun</h3>
-        <p>
-          We'll be talking about a couple of tools for making lightweight,
-          flexible digital games / gamelike experiences quickly, like Twine,
-          Bitsy, and Google Sheets (for real!).<br />
-          No coding experience necessary.
-        </p>
+        <img
+          src="/Assets/LachlanW.png"
+          alt="Lachlan Campbell"
+          width="439"
+          height="568"
+        />
+        <div>
+          <h3 class="font-camera">
+            Build Artificially Unintelligent Websites with React + LLMs –
+            Lachlan Campbell
+          </h3>
 
-        <br />
-        <br />
-
-        <h3 class="font-camera">
-          Build Artificially Unintelligent Websites with React + LLMs – Lachlan
-          Campbell
-        </h3>
-
-        <p>
-          React is the JavaScript library used by the largest companies to build
-          their most important websites. We’re going to use the same tools to
-          make tiny, stupid websites, made stupider with generative AI. We’ll
-          cover the basics of setting up a website with Vite and React.js
-          components, using React Hooks to add interactivity to the site, then
-          using Replicate’s open source AI models to add the worst text/image
-          generation you’ve ever seen. Come with basic JavaScript experience,
-          leave with a website!
-        </p>
+          <p>
+            React is the JavaScript library used by the largest companies to
+            build their most important websites. We’re going to use the same
+            tools to make tiny, stupid websites, made stupider with generative
+            AI. We’ll cover the basics of setting up a website with Vite and
+            React.js components, using React Hooks to add interactivity to the
+            site, then using Replicate’s open source AI models to add the worst
+            text/image generation you’ve ever seen. Come with basic JavaScript
+            experience, leave with a website!
+          </p>
+          <p>Classroom 413</p>
+        </div>
       </div>
     </section>
+    <style>
+      .workshopDescription {
+        display: grid;
+        gap: 1rem 2rem;
+        grid-template-columns: 128px 1fr;
+      }
+      .workshopDescription h2 {
+        grid-column: span 2;
+        font-size: 4rem;
+        margin: 0;
+        text-align: left;
+      }
+      .workshopDescription img {
+        width: 100%;
+        height: auto;
+        scale: 2.5;
+        animation: bobble 1.25s infinite alternate linear;
+      }
+      .workshopDescription img:nth-of-type(2) {
+        animation-delay: 0.4s;
+        animation-duration: 0.9s;
+      }
+      .workshopDescription img:nth-of-type(3) {
+        animation-delay: 0.6s;
+        animation-duration: 1.75s;
+      }
+      .workshopDescription img:nth-of-type(4) {
+        animation-delay: 0.8s;
+        animation-duration: 0.75s;
+      }
+      .workshopDescription h3 {
+        margin-top: 0;
+      }
+      .workshopDescription p:last-child {
+        opacity: 0.5;
+      }
+
+      @keyframes bobble {
+        from {
+          rotate: -6deg;
+        }
+        to {
+          rotate: 6deg;
+        }
+      }
+    </style>
   </body>
 </html>
