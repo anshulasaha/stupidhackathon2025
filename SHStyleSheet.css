@@ -1,13 +1,13 @@
 @font-face {
   font-family: Camera;
-  src: url(/Assets/ABCCameraEdu-Medium.woff2) format("opentype");
+  src: url(/Assets/ABCCameraEdu-Medium.woff2) format("woff2");
   font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
   font-family: MonaspaceKrypton;
-  src: url(/Assets/MonaspaceKrypton-MediumItalic.otf) format("opentype");
+  src: url(/Assets/MonaspaceKrypton-MediumItalic.woff2) format("woff2");
   font-weight: 700;
   font-display: swap;
 }
@@ -27,6 +27,7 @@ body {
 }
 
 h1,
+h2,
 .MainTitle,
 .font-camera {
   font-family:
@@ -54,6 +55,14 @@ h1 {
   hyphens: auto;
 }
 
+h2 {
+  font-size: 3rem;
+  line-height: 1;
+  text-wrap: balance;
+  margin-top: 2rem;
+  margin-bottom: 0.25rem;
+}
+
 marquee {
   background-color: var(--color-yellow);
   animation: rainbow 5s infinite linear;
@@ -79,14 +88,12 @@ marquee {
 }
 
 body,
-h2,
-h3,
+.NormalText,
 marquee,
 .font-mona {
   font-family: MonaspaceKrypton, "Courier New", Courier, monospace;
 }
-.NormalText,
-h2 {
+.NormalText {
   text-wrap: balance;
   max-width: min(90%, 48rem);
   margin-inline: auto;
@@ -223,30 +230,6 @@ a {
   display: inline-block;
 }
 
-/* Styling for Image Buttons */
-a img {
-  transition:
-    box-shadow 0.3s ease-in-out,
-    transform 0.2s ease-in-out;
-}
-
-/* Individual Button Classes (Optional if needed for further styling) */
-.WorkshopButton:hover {
-  transform: scale(1.1);
-}
-
-.ScheduleButton:hover {
-  transform: scale(1.1);
-}
-
-.CodeOfConductButton:hover {
-  transform: scale(1.1);
-}
-
-.DocumentationButton:hover {
-  transform: scale(1.1);
-}
-
 .alligator {
   aspect-ratio: 693 / 643;
   background-image: url(/Assets/WebAni1.webp);
@@ -291,16 +274,50 @@ a img {
 
 dl {
   display: grid;
-  margin: 0;
   grid-template-columns: 8ch 1fr;
-  gap: 0.5rem;
+  gap: 0.5rem 2rem;
 }
 dt {
   text-align: right;
+}
+dd {
+  margin: 0;
 }
 
 a {
   color: var(--color-cyan);
   text-decoration: underline wavy;
   text-underline-position: under;
+}
+
+.BigButton {
+  width: 168px;
+  aspect-ratio: 3 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  font-size: 1.25rem;
+  text-wrap: balance;
+  position: relative;
+}
+.BigButton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  image-rendering: pixelated;
+  background-image: url(/Assets/ButtonBg.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  transition: transform 0.1s ease;
+  z-index: -1;
+}
+.BigButton:hover::before {
+  transform: scale(1.1);
+}
+
+mark {
+  background-color: var(--color-yellow);
 }
